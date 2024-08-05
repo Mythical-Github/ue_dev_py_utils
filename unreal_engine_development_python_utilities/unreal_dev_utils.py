@@ -2,7 +2,7 @@ import os
 import json
 
 
-import general_utils
+from general_python_utilities import general_utils
 from unreal_dev_enums import PackagingDirType
 
 
