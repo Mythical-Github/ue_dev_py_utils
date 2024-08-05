@@ -5,7 +5,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        'python_logging @ git+https://github.com/Mythical-Github/general_python_utilities.git',
+        'general_python_utilities @ git+https://github.com/Mythical-Github/general_python_utilities.git',
     ],
     include_package_data=True,
     package_data={},
