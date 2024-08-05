@@ -120,3 +120,7 @@ def has_build_target_been_built(uproject_file_path: str) -> bool:
 
 def get_unreal_pak_exe_path(unreal_engine_dir: str) -> str:
     return f'{unreal_engine_dir}/Engine/Binaries/Win64/UnrealPak.exe'
+
+
+def get_game_window_title(input_game_exe_path: str) -> str:
+    return os.path.splitext(get_game_process_name(input_game_exe_path))[0]
