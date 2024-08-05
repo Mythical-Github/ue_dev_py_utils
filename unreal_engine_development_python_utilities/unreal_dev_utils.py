@@ -116,3 +116,7 @@ def get_build_target_file_path(uproject_file_path: str) -> str:
 
 def has_build_target_been_built(uproject_file_path: str) -> bool:
     return os.path.exists(get_build_target_file_path(uproject_file_path))
+
+
+def get_unreal_pak_exe_path(unreal_engine_dir: str) -> str:
+    return f'{unreal_engine_dir}/Engine/Binaries/Win64/UnrealPak.exe'
