@@ -4,7 +4,9 @@ setup(
     name='unreal_engine_development_python_utilities',
     version='0.1',
     packages=find_packages(),
-    install_requires=[],
+    install_requires=[
+        'python_logging @ git+https://github.com/Mythical-Github/general_python_utilities.git',
+    ],
     include_package_data=True,
     package_data={},
     description='A Python module containing unreal engine development related functions.',
