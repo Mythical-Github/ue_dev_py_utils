@@ -7,4 +7,4 @@ A Python module containing unreal engine development related functions.
 You can install this package via pip:
 
 ```bash
-pip install git+https://github.com/Mythical-Github/unreal_engine_development_python_utilities.git
+pip install git+https://github.com/Mythical-Github/ue_dev_py_utils.git
