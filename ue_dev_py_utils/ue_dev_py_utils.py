@@ -2,7 +2,7 @@ import os
 import json
 
 
-from general_python_utilities import general_utils
+from gen_py_utils import gen_py_utils as general_utils
 from .ue_dev_py_enums import PackagingDirType
 
 
