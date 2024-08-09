@@ -46,7 +46,7 @@ def get_game_content_dir(game_dir: str):
 
 
 def get_game_pak_folder_archives() -> list:
-    if general_utils.get_is_game_iostore():
+    if get_is_game_iostore():
         return [
             'pak',
             'utoc',
