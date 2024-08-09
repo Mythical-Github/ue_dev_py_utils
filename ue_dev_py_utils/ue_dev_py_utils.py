@@ -106,8 +106,8 @@ def get_engine_window_title(uproject_file_path: str) -> str:
     return f'{general_utils.get_process_name(uproject_file_path)[:-9]} - {'Unreal Editor'}'
 
 
-def get_engine_process_name() -> str:
-    return general_utils.get_process_name(get_unreal_editor_exe_path())
+def get_engine_process_name(unreal_dir: str) -> str:
+    return general_utils.get_process_name(get_unreal_editor_exe_path(unreal_dir))
 
 
 def get_build_target_file_path(uproject_file_path: str) -> str:
