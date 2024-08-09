@@ -45,8 +45,8 @@ def get_game_content_dir(game_dir: str):
     return f'{game_dir}/Content'
 
 
-def get_game_pak_folder_archives() -> list:
-    if get_is_game_iostore():
+def get_game_pak_folder_archives(uproject_file_path: str, game_dir: str) -> list:
+    if get_is_game_iostore(uproject_file_path, game_dir):
         return [
             'pak',
             'utoc',
