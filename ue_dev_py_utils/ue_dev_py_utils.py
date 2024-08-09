@@ -3,7 +3,7 @@ import json
 
 
 from general_python_utilities import general_utils
-from .unreal_dev_enums import PackagingDirType
+from .ue_dev_py_enums import PackagingDirType
 
 
 def get_game_process_name(input_game_exe_path: str) -> str:
