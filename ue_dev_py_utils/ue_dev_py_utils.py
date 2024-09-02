@@ -30,18 +30,12 @@ def get_is_game_iostore(uproject_file_path: str, game_dir: str) -> bool:
     is_game_iostore = False
     all_files = gen_py_utils.gen_py_utils.get_files_in_tree(get_game_paks_dir(_uproject_file_path, _game_dir))
     for file in all_files:
-        print(file)
         file_extensions = gen_py_utils.gen_py_utils.get_file_extensions(file)
         for file_extension in file_extensions:
-            print(file_extension)
             if file_extension == '.ucas':
                 is_game_iostore = True
             elif file_extension == '.utoc':
                 is_game_iostore = True
-    if is_game_iostore():
-        print('game is iostore')
-    else:
-        print('game is not iostore')
     return is_game_iostore
 
 
