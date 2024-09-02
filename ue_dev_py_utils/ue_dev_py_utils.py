@@ -2,17 +2,17 @@ import os
 import json
 
 
-from gen_py_utils import gen_py_utils as general_utils
+import gen_py_utils.gen_py_utils
 from .ue_dev_py_enums import PackagingDirType
 
 
 def get_game_process_name(input_game_exe_path: str) -> str:
-    return general_utils.get_process_name(input_game_exe_path)
+    return gen_py_utils.gen_py_utils.get_process_name(input_game_exe_path)
 
 
 def get_unreal_engine_version(engine_path: str) -> str:
     version_file_path = f'{engine_path}/Engine/Build/Build.version'
-    general_utils.check_file_exists(version_file_path)
+    gen_py_utils.gen_py_utils.check_file_exists(version_file_path)
     with open(version_file_path, 'r') as f:
         version_info = json.load(f)
         unreal_engine_major_version = version_info.get('MajorVersion', 0)
@@ -28,12 +28,20 @@ def get_is_game_iostore(uproject_file_path: str, game_dir: str) -> bool:
     _game_dir = game_dir
     _uproject_file_path = uproject_file_path
     is_game_iostore = False
-    file_extensions = general_utils.get_file_extensions(get_game_paks_dir(_uproject_file_path, _game_dir))
-    for file_extension in file_extensions:
-        if file_extension == '.ucas':
-            is_game_iostore = True
-        elif file_extension == '.utoc':
-            is_game_iostore = True
+    all_files = gen_py_utils.gen_py_utils.get_files_in_tree(get_game_paks_dir(_uproject_file_path, _game_dir))
+    for file in all_files:
+        print(file)
+        file_extensions = gen_py_utils.gen_py_utils.get_file_extensions(file)
+        for file_extension in file_extensions:
+            print(file_extension)
+            if file_extension == '.ucas':
+                is_game_iostore = True
+            elif file_extension == '.utoc':
+                is_game_iostore = True
+    if is_game_iostore():
+        print('game is iostore')
+    else:
+        print('game is not iostore')
     return is_game_iostore
 
 
@@ -103,11 +111,11 @@ def get_saved_cooked_dir(uproject_file_path: str) -> str:
 
 
 def get_engine_window_title(uproject_file_path: str) -> str:
-    return f'{general_utils.get_process_name(uproject_file_path)[:-9]} - {'Unreal Editor'}'
+    return f'{gen_py_utils.gen_py_utils.get_process_name(uproject_file_path)[:-9]} - {'Unreal Editor'}'
 
 
 def get_engine_process_name(unreal_dir: str) -> str:
-    return general_utils.get_process_name(get_unreal_editor_exe_path(unreal_dir))
+    return gen_py_utils.gen_py_utils.get_process_name(get_unreal_editor_exe_path(unreal_dir))
 
 
 def get_build_target_file_path(uproject_file_path: str) -> str:
