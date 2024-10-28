@@ -105,7 +105,7 @@ def get_saved_cooked_dir(uproject_file_path: str) -> str:
 
 
 def get_engine_window_title(uproject_file_path: str) -> str:
-    return f'{gen_py_utils.gen_py_utils.get_process_name(uproject_file_path)[:-9]} - {'Unreal Editor'}'
+    return f"{gen_py_utils.gen_py_utils.get_process_name(uproject_file_path)[:-9]} - Unreal Editor"
 
 
 def get_engine_process_name(unreal_dir: str) -> str:
